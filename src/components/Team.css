@@ -1,0 +1,457 @@
+@charset "UTF-8";
+
+.team-section {
+  font-family: "DM Sans", "Poppins", sans-serif;
+  background-color: var(--deep);
+  position: relative;
+  padding: 60px 0 40px;
+  margin-top: 0;
+  overflow: visible;
+}
+
+.team-page-container {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 0 60px;
+  box-sizing: border-box;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.team-header {
+  width: 100%;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 30px;
+  overflow: hidden;
+  transition: 0.45s ease 0.05s;
+  max-height: 70px;
+}
+
+.team-header-title {
+  width: 100%;
+  font-family: "Playfair Display", "Yeseva One", cursive;
+  font-size: clamp(1.8em, 3vw, 2.5em);
+  color: var(--teal-light);
+  margin: 0;
+}
+
+.team-container {
+  padding: 0 30px;
+  box-sizing: border-box;
+  max-width: 1400px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+}
+
+.team-page-container .person {
+  width: calc(33.333% - 20px);
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.45s;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.person-details {
+  padding: 0 20px;
+  box-sizing: border-box;
+  margin-top: -15px;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.team-page-container .person-img {
+  width: 100%;
+  display: block;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.team-page-container .person-title {
+  color: var(--text);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.4em, 2vw, 2.3em);
+  margin-top: 25px;
+  margin-left: -8px;
+}
+
+.team-page-container .person-desc {
+  color: var(--gold);
+  margin-top: 10px;
+  margin-left: -8px;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  letter-spacing: 2px;
+  font-family: "DM Mono", monospace;
+}
+
+.person-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+  gap: 0;
+}
+
+.team-page-container .person-list:hover .person {
+  opacity: 0.6;
+}
+
+.team-page-container .person:hover {
+  opacity: 1 !important;
+}
+
+.team-page-container .person::before {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: var(--teal-light);
+  content: "";
+  height: 0;
+  transition: 0.45s;
+}
+
+.team-page-container .person::after {
+  content: "⌄";
+  font-size: 36px;
+  color: var(--navy);
+  position: absolute;
+  width: 100%;
+  top: 0;
+  height: 100%;
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  text-align: center;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  flex-direction: column;
+}
+
+.container-selected .team-header {
+  max-height: 0;
+  margin-bottom: 0;
+  padding: 0;
+  opacity: 0;
+}
+
+.container-selected .person {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+.container-selected .person-list .person-selected {
+  opacity: 1 !important;
+  pointer-events: auto;
+}
+
+.container-selected .person-list .person-selected::before {
+  height: 100%;
+}
+
+.container-selected .person-list .person-selected .person-details {
+  margin-top: -40px;
+  opacity: 0;
+}
+
+.team-detail {
+  position: fixed;
+  width: calc(100% - 100px);
+  right: 80px;
+  top: 0;
+  height: 100vh;
+  color: var(--text);
+  transition: 0.15s;
+  opacity: 0;
+  visibility: hidden;
+  box-sizing: border-box;
+  padding: 100px 60px;
+  z-index: 1000;
+  background: var(--deep);
+  overflow-y: auto;
+  pointer-events: none;
+}
+
+.container-ready .team-detail {
+  pointer-events: auto;
+}
+
+.team-detail-inner {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-detail-left {
+  flex: 0 0 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-detail-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 4px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.team-detail-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.team-detail-bio {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.team-detail-header {
+  margin-bottom: 0;
+}
+
+.team-detail-name {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2em, 4vw, 2.5em);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.team-detail-title {
+  font-family: "DM Mono", monospace;
+  font-size: 0.9em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0;
+}
+
+.team-detail-bio-content {
+  margin-top: 0;
+}
+
+.team-detail-bio-content p {
+  margin: 0 0 20px 0;
+  line-height: 1.8;
+  font-size: 1.05em;
+  color: var(--muted);
+}
+
+.team-detail-bio-content p:last-child {
+  margin-bottom: 0;
+}
+
+.container-ready .team-detail {
+  transition: 0.45s ease 0.3s;
+  opacity: 1;
+  right: 0;
+  visibility: visible;
+}
+
+
+.container-ready .team-container {
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.container-ready .team-section {
+  padding: 0;
+  margin: 0;
+  height: 0;
+  overflow: visible;
+}
+
+.container-ready .person-selected {
+  left: 0 !important;
+  top: 0 !important;
+  z-index: 99;
+  height: 100% !important;
+  width: 100px !important;
+  pointer-events: auto;
+}
+
+.container-ready .person-selected::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.person-back::before {
+  height: 0 !important;
+}
+
+.person-back .person-details {
+  margin-top: -15px !important;
+  transition-delay: 0.35s;
+  opacity: 1 !important;
+}
+
+.team-detail .social {
+  margin-top: 8px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.team-detail .social a {
+  color: var(--teal-light);
+  font-size: 14px;
+  font-family: "DM Mono", monospace;
+  text-decoration: none;
+  letter-spacing: 1px;
+  padding: 8px 16px;
+  border: 1px solid rgba(14, 124, 123, 0.3);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.team-detail .social a:hover {
+  border-color: var(--teal);
+  background: var(--teal-glow);
+}
+
+.team-back-btn {
+  margin-top: 32px;
+  padding: 12px 24px;
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid var(--teal);
+  color: var(--teal-light);
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  align-self: flex-start;
+}
+
+.team-back-btn:hover {
+  background: var(--teal-glow);
+}
+
+@media (max-width: 1200px) {
+  .team-detail {
+    padding: 100px 40px;
+  }
+
+  .team-detail-inner {
+    gap: 40px;
+  }
+
+  .team-detail-left {
+    flex: 0 0 350px;
+  }
+
+  .team-detail-image {
+    max-width: 100%;
+  }
+
+  .team-page-container .person-title {
+    font-size: 1.7em;
+  }
+
+  .person-details {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 970px) {
+  .team-section {
+    padding: 40px 0;
+  }
+  
+  .team-page-container {
+    padding: 0 24px;
+  }
+
+  .team-detail {
+    width: calc(100% - 48px);
+    right: 24px;
+    padding-top: 80px;
+  }
+
+  .team-detail-left {
+    width: 100%;
+    padding: 50px 50px 30px 50px;
+    min-height: 300px;
+  }
+
+  .team-detail-left::after {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      var(--deep) 83%,
+      var(--navy) 100%
+    );
+  }
+
+  .team-detail-right {
+    padding: 0 50px 40px;
+    width: 100%;
+  }
+
+  .team-detail-header {
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .team-detail-bio-content p,
+  .team-detail .social,
+  .team-back-btn {
+    margin-left: 0;
+  }
+
+  .container-ready .person-selected {
+    width: 50px !important;
+  }
+
+  .team-page-container .person {
+    width: calc(50% - 20px);
+  }
+
+  .team-header {
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-section {
+    padding: 30px 0;
+  }
+  
+  .team-page-container {
+    padding: 0 24px;
+  }
+  
+  .team-page-container .person {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .team-header {
+    padding-bottom: 20px;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+}
