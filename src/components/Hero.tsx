@@ -5,10 +5,11 @@ const Hero = () => {
       <div className="hero-left">
         <div className="hero-eyebrow">India Water-Neutral Initiative · 2026–2035</div>
         <h1 className="hero-headline">
-          The Data Center<br />
-          that <em>Creates</em><br />
-          More Water<br />
-          Than It Consumes
+          Where
+          <br />
+          <em>Data Processing</em>
+          <br />
+          Water <em>Positivity</em>
         </h1>
         <p className="hero-sub">
           India's digital economy demands 2,000+ MW of compute by 2030. We're building the closed-loop, AI-optimized infrastructure to power it — without draining a single freshwater aquifer.
