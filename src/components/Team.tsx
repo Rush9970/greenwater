@@ -2,7 +2,7 @@ import { useState, useRef } from 'react'
 import './Team.css'
 import teamImage from '../img/image.png'
 import team2 from '../img/img2.jpeg'
-import team3 from '../img/img3.png'
+import team3 from '../img/tem33.png'
 export interface PersonSocial {
   instagram?: string
   twitter?: string
@@ -41,14 +41,14 @@ const PERSONS: Person[] = [
     },
   },
   {
-    name: 'Rahul Verma',
+    name: 'Nishi saini',
     photo: team3,
     title: '',
-    bio: '<p>ham ko to hai no 🦴</p>',
+    bio: '<p>Hi, Nishi here — a bcom hons.undergraduate at DDUC, Delhi University (Batch of 2028) passionate about finance, economics .</p>',
     social: {
       instagram: '#',
       twitter: '#',
-      linkedin: '#',
+      linkedin: 'https://www.linkedin.com/in/nishi-s-9077a3283',
     },
   },
 ]
