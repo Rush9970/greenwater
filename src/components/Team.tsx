@@ -1,7 +1,8 @@
 import { useState, useRef } from 'react'
 import './Team.css'
 import teamImage from '../img/image.png'
-
+import team2 from '../img/img2.jpeg'
+import team3 from '../img/img3.png'
 export interface PersonSocial {
   instagram?: string
   twitter?: string
@@ -29,21 +30,21 @@ const PERSONS: Person[] = [
     },
   },
   {
-    name: 'Priya Sharma',
-    photo: teamImage,
-    title: 'CTO',
-    bio: '<p>Architect of the Jal-AI cooling and scheduling stack. Expertise in two-phase immersion systems and AI-driven workload placement. Previously led R&D at a major data center OEM.</p>',
+    name: 'Anshika',
+    photo: team2,
+    title: '',
+    bio: '<p>Hi, anshika here — a data science undergraduate at DSEU (Batch of 2028) passionate about data science ,engineering, AI, and ML and deep learning .</p>',
     social: {
       instagram: '#',
       twitter: '#',
-      linkedin: '#',
+      linkedin: 'https://www.linkedin.com/in/anshika-dubey-796352328/',
     },
   },
   {
     name: 'Rahul Verma',
-    photo: teamImage,
-    title: 'Head of Sustainability',
-    bio: '<p>Leads WUE certification, policy engagement with MeitY and Jal Shakti, and ESG reporting. Background in environmental engineering and water resource management.</p>',
+    photo: team3,
+    title: '',
+    bio: '<p>ham ko to hai no 🦴</p>',
     social: {
       instagram: '#',
       twitter: '#',
